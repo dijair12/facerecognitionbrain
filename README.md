@@ -1,6 +1,11 @@
 # Face Recognition Brain
 
-Projeto que tem como finalidade ao ser inserida uma imagem/foto de uma pessoa com link web realiza o reconhecimento facial por meio da API do Clarifai
+Aplicação de reconhecimento facil, ao inserir uma imagem/foto da face de uma pessoa, através de um link web realiza o reconhecimento facial por meio da API do Clarifai
+
+
+<h1 align="center">
+  <img src="https://media.giphy.com/media/upObPOnT7Coz70lBuC/giphy.gif"  style="margin: 0 auto" alt="demonstration" />
+</h1>
 
 ## API Clarifai
 
