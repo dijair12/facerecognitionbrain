@@ -9,6 +9,24 @@ class Signin extends Component {
     }
   }
 
+  onSubmitSignIn = () => {
+    fetch('http://localhost:3001/signin', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: this.state.signInEmail,
+        password: this.state.signInPassword
+      })
+    })
+      .then(response => response.json())
+      .then(user => {
+        if (user.id) {
+          this.props.loadUser(user);
+          this.props.onRouteChange('home');
+        }
+      })
+  }
+
   onEmailChange = (event) => {
     this.setState({ signInEmail: event.target.value })
   }
@@ -65,7 +83,7 @@ class Signin extends Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitChange}
+                onClick={this.onSubmitSignIn}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Entrar"
