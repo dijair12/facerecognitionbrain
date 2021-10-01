@@ -5,8 +5,10 @@ class Signin extends Component {
     super(props)
     this.state = {
       signInEmail: '',
-      signInPassword: ''
+      signInPassword: '',
+      signIsValid: false
     }
+    console.log(this.state.signIsValid);
   }
 
   onSubmitSignIn = () => {
@@ -23,8 +25,11 @@ class Signin extends Component {
         if (user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange('home');
+        } else {
+          this.setState({ signIsValid: true })
         }
       })
+
   }
 
   onEmailChange = (event) => {
@@ -33,23 +38,6 @@ class Signin extends Component {
 
   onPasswordChange = (event) => {
     this.setState({ signInPassword: event.target.value })
-  }
-
-  onSubmitChange = () => {
-    fetch('http://localhost:3001/signin', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data === "success") {
-          this.props.onRouteChange('home')
-        }
-      })
   }
 
   render() {
@@ -89,6 +77,12 @@ class Signin extends Component {
                 value="Entrar"
               />
             </div>
+            {this.state.signIsValid ?
+              (<>
+                <div className="lh-copy mt3">
+                  <p className="f6 link dim black db pointer">Credencial inválida</p>
+                </div>
+              </>) : (<></>)}
             <div className="lh-copy mt3">
               <p onClick={() => onRouteChange('register')} href="#0" className="f6 link dim black db pointer">Cadastre-se</p>
             </div>
