@@ -7,6 +7,7 @@ const FaceRecognition = ({ imageUrl, box }) => {
       <div className="absolute mt2">
         <img
           id="inputimage"
+          alt="#"
           src={imageUrl}
           width='500px'
           height='auto'
