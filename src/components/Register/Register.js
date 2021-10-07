@@ -6,7 +6,8 @@ class Register extends React.Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      registerIsValid: false
     }
   }
 
@@ -34,9 +35,11 @@ class Register extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
-        if (user) {
+        if (user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange('home');
+        } else {
+          this.setState({ registerIsValid: true })
         }
       })
   }
@@ -79,6 +82,12 @@ class Register extends React.Component {
                 />
               </div>
             </fieldset>
+            {this.state.registerIsValid ?
+              (<>
+                <div className="lh-copy mt3">
+                  <p className="f6 link dim black db pointer">Preencha os campos</p>
+                </div>
+              </>) : (<></>)}
             <div className="">
               <input
                 onClick={this.onSubmitSignIn}

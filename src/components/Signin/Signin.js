@@ -8,7 +8,6 @@ class Signin extends Component {
       signInPassword: '',
       signIsValid: false
     }
-    console.log(this.state.signIsValid);
   }
 
   onSubmitSignIn = () => {
