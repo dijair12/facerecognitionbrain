@@ -2,7 +2,8 @@
   <a href="https://facialrecognition-front.herokuapp.com/">🔗 Facial Recognition</a>
  </h1>
 
-Aplicação de reconhecimento facial, ao inserir um link web imagem/foto do rosto de uma pessoa, realiza o reconhecimento facial. Com controle de acesso via login, podendo realizar também seu cadastro para uso. Classificando por usuário, controla quantas vezes foi realizado o reconhecimento facial das imagens.
+Aplicação de reconhecimento facial, ao inserir um link web imagem/foto do rosto de uma pessoa, realiza o reconhecimento facial. 
+Com controle de acesso via login, podendo realizar também seu cadastro para uso. Classificando por usuário, controla quantas vezes foi realizado o reconhecimento facial das imagens.
 
 ### Exemplo de image
 
@@ -14,14 +15,26 @@ Aplicação de reconhecimento facial, ao inserir um link web imagem/foto do rost
 </h1>
 
 
+## Projeto relacionado
+
+Controle e construção realizado com <a href="https://github.com/dijair12/facialrecognition-api">facialrecognition-api</a>, projeto back-end independente para login, cadastro, perfil e atualização de imagem, comentado acima. Com uso de bando de dados relacional postgree.
+
 ## Tecnologias
 
 Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
+### Front
 - [React](https://reactjs.org/)
-- [Clarifai](https://docs.clarifai.com/)
 - [Tachyons](https://tachyons.io/docs/)
 - [Particles Js](https://www.npmjs.com/package/react-particles-js)
+
+### Back <a href="https://github.com/dijair12/facialrecognition-api">facialrecognition-api</a>
+
+- [Express](https://reactjs.org/)
+- [Knex]()
+- [Bcrypt]()
+- [Clarifai](https://docs.clarifai.com/)
+- [Postgree](https://docs.clarifai.com/)
 
 ## Instalação e uso
 
